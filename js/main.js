@@ -5,7 +5,7 @@ const tasksContainer = document.querySelector("#todoCards"); // get the div that
 addBtn.addEventListener('click', addTask); //call function addTask when clic
 const rmBtn = document.querySelector(".delBtn"); //same as addBtn but for delete button (fa-trash)
 rmBtn.addEventListener('click', function () { //delete default task on click
-    count.innerHTML = tasksContainer.querySelectorAll(".todoCard").length
+    count.innerHTML = counter(tasksContainer);
     deleteTask(taskCard); //target the task
 });
 
@@ -21,15 +21,15 @@ function addTask () {
     newDelBtn.addEventListener('click', function () { // add eventlistener to delete the newTask
         deleteTask(newTask); //target the new task
     });
-    count.innerHTML = tasksContainer.querySelectorAll(".todoCard").length;
+    count.innerHTML = counter(tasksContainer);
 }
 
 function deleteTask(task) {
-    count.innerHTML = tasksContainer.querySelectorAll(".todoCard").length;
     task.remove(); //remove the task
+    count.innerHTML = counter(tasksContainer);
 }
 
-// function counter(tasksContainer) {
-//     const nb = tasksContainer.querySelectorAll("#todoCards").length;
-//     return nb;
-// }
+function counter(content) {
+    let nb = content.querySelectorAll(".todoCard").length;
+    return nb;
+}
