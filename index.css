@@ -1,0 +1,9 @@
+#btn {
+    text-align: center;
+    width: 50%;
+}
+
+#todoCards {
+    display: flex;
+    flex-direction: row;
+}
